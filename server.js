@@ -63,7 +63,7 @@ app.use(expressLayout)//using ejs
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/resources/views'))//setting up all the frontend file'
 require('./routes')(app);
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 8080;
 
 const server=app.listen(port,()=>{
 console.log("server started at" + port);
