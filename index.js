@@ -89,4 +89,3 @@ io.on('connection',(socket)=>{
         eventEmitter.on('orderPlaced',(data)=>{
             io.to('adminRoom').emit('orderPlaced',data)
         })
-module.exports=app;
