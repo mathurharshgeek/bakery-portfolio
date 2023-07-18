@@ -13,7 +13,7 @@ const passport=require("passport");
 const login=require('./login')
 function routes(app)
 {
-    app.get('/',homeCon().index)
+    // app.get('/',homeCon().index)
     //users routes
     app.get('/cart',cartCon().index)
     app.post('/update-cart',cartCon().update);
