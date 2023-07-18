@@ -62,12 +62,7 @@ app.use(expressLayout)//using ejs
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/resources/views'))//setting up all the frontend file'
-app.get('/',(req,res)=>{
-  
 
-    res.send("hello");
-  
-})
 require('./routes')(app);
 var port = process.env.PORT || 8080;
 
