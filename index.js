@@ -62,19 +62,17 @@ app.use(expressLayout)//using ejs
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/resources/views'))//setting up all the frontend file'
-app.get('/',(err,req,res)=>{
-  if(err){
-    console.log(err);
-  }else{
+app.get('/',(req,res)=>{
+  
 
     res.send("hello");
-  }
+  
 })
 require('./routes')(app);
 var port = process.env.PORT || 8080;
 
-const server=app.listen(port,()=>{
-console.log("server started at" + port);
+const server=app.listen(5000,()=>{
+console.log("server started at" );
 })
 //socket 
 const io=require('socket.io')(server)
