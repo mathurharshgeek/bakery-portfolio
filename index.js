@@ -44,9 +44,9 @@ app.use(session({
 }));
 app.use(flash());//config flash to use notification feature
 
-app.use(express.json());//so we can send output as json
 app.use(express.static(path.join(__dirname, '/public')))
-app.use(express.urlencoded({extended:false}));//so we can accces the form input values
+app.use(express.urlencoded({extended:true}));//so we can accces the form input values
+app.use(express.json());//so we can send output as json
 
 // global middelware to get sessio+n variable on home.ejs
 app.use((req,res,next)=>{
@@ -62,9 +62,7 @@ app.use(expressLayout)//using ejs
 
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/resources/views'))//setting up all the frontend file'
-app.get('/test',(req,res)=>{
-  res.send("yes worth it");
-})
+
 require('./routes')(app);
 var port = process.env.PORT || 8080;
 
